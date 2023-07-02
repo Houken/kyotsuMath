@@ -46,3 +46,11 @@ services:
       PGTZ: 'Asia/Tokyo'
     volumes:
       - postgres-volume:/var/lib/postgresql
+
+  db-gui:
+    image: sosedoff/pgweb
+    container_name: "pgweb"
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
